@@ -1,0 +1,33 @@
+---
+const { title, time, date, price, description, source } = Astro.props;
+
+---
+
+<!-- EVENT CARD -->
+<article>
+    <!-- IMG -->
+    <div class=""><img src={source}/></div>
+    <!-- TITLE -->
+<h2 class="font-semibold italic text-2xl">{title}</h2>
+
+<section class="grid grid-cols-4">
+
+        <!-- LEFT COLUMN (span 1) -->
+<div class="col-span-1 font-extralight text-sm">
+        <!-- TIME -->
+<p>{time}</p>
+        <!-- DATE -->
+<p>{date}</p>
+        <!-- PRICE -->
+<p>{price}</p>
+    </div>
+
+            <!-- RIGHT COLUMN (span 3) -->
+    <div class="col-span-3 text-lg">
+        <!-- DESCRIPTION -->
+<p>{description}</p>
+<button class="font font-semibold">View more</button>
+    </div>
+    </section>
+</article>
+

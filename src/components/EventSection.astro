@@ -1,0 +1,50 @@
+---
+import EventCard from "./EventCard.astro";
+---
+
+
+<section class="grid sm:grid-cols-2 md:grid-cols-3 gap-16 px-16">
+
+      <!-- <a href="/">
+  <EventCard source="/imgs/ny-lille-klub_17-nov-2023.webp" title="Don't Rush the Process" time="21:00-05:00" date="17/11-2023" price="85 DKK" description="On the 17th of November, we invite all of you lovely people to the first edition of Don't Rush The Process, a Tech-House event brought to you by Ny Lille Klub.">
+  </EventCard>
+    </a>
+
+      <a href="/">
+  <EventCard source="/imgs/ny-lille-klub_09-nov-2023.webp" alt="Ny Lille Klub event November 9th, 2023" title="" time="" date="" price="" description="">
+  </EventCard>
+    </a>
+
+       <a href="/">
+  <EventCard source="/imgs/ny-lille-klub_20-oct-2023.webp" title="Caregiving Assembly" time="20:00-00:00" date="20/10-2023" price="60 DKK" description="Join us once more for improvisations and bangers as we assemble for the shaping of a record followed by shows with favourites of today. Curated by @20_14escho">
+  </EventCard>
+    </a> -->
+
+      <a href="/">
+  <EventCard title="" time="" date="" price="" description="">
+    <img class="w-full" src="/imgs/.webp" alt="Ny Lille Klub event October 20th, 2023" />
+  </EventCard>
+    </a>
+
+</section>
+
+<script>
+//https://ewctjbilbprtrcpfawii.supabase.co
+//eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV3Y3RqYmlsYnBydHJjcGZhd2lpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDA0ODY2NzAsImV4cCI6MjAxNjA2MjY3MH0.9RdM_RWvRe4FCHY89k1A2cHG0vxSEnM5c0Vcp7aMVbI
+
+fetch("https://ewctjbilbprtrcpfawii.supabase.co/rest/v1/events", {
+method: "GET",
+headers: {
+  apikey:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV3Y3RqYmlsYnBydHJjcGZhd2lpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDA0ODY2NzAsImV4cCI6MjAxNjA2MjY3MH0.9RdM_RWvRe4FCHY89k1A2cHG0vxSEnM5c0Vcp7aMVbI"
+}
+})
+.then(res=>res.json())
+.then(showData)
+
+function showData(items){
+  console.log(items)
+  //items.forEach()
+}
+
+//function(){}
+</script>
