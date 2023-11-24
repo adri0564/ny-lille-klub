@@ -8,16 +8,18 @@ const { title, time, date, price, description, source } = Astro.props;
     <!-- IMG -->
     <div class="w-full"><img class="w-full" src={source}/></div>
     <!-- TITLE -->
-<h2 class="font-semibold italic text-2xl">{title}</h2>
+    <div class="px-4 sm:px-0">
+<h2 class="font-bold italic text-2xl">{title}</h2>
 
 <section class="grid grid-cols-4">
 
         <!-- LEFT COLUMN (span 1) -->
 <div class="col-span-1 font-extralight text-sm">
+                <!-- DATE -->
+<p>{date}</p>
         <!-- TIME -->
 <p>{time}</p>
-        <!-- DATE -->
-<p>{date}</p>
+
         <!-- PRICE -->
 <p>{price}</p>
     </div>
@@ -29,5 +31,7 @@ const { title, time, date, price, description, source } = Astro.props;
 <button class="font font-semibold">View more</button>
     </div>
     </section>
+    </div>
+
 </article>
 
