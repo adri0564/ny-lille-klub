@@ -1,12 +1,17 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import PageHeader from "../components/PageHeader.astro";
+// import PageHeader from "../components/PageHeader.astro";
+import PageIntro from "../components/PageIntro.astro";
 
 ---
 
 <MainLayout title="About" description="Ny Lille Klub's 'about' page" keywords="Ny Lille Klub, volunteer coomunity, night club, kulturhus, laplandsgade, lappen">
 
-<section  class="grid sm:grid-cols-2 lg:grid-cols-3 gap-16">
+ <PageIntro  pageHeader="About" imageSource="/imgs/ny-lille-klub_about.webp" imageAltText="A summer night at the surroundings of Ny Lille Klub's space." pageDescription="Welcome to Ny Lille Klub - where warmth, trust, and curiosity come together in a vibrant community! We're all about social activities, where everyone is welcome. Join us in fostering connections, embracing diversity, and creating cherished moments. Ny Lille Klub is your welcoming space, whether you're a seasoned member or a newcomer. Come, be a part of our dynamic community where every person and every moment is valued.">
+
+</PageIntro>  
+
+<!-- <section  class="grid sm:grid-cols-2 lg:grid-cols-3 gap-16">
 
 <div class="col-span-1">
 <img src="/imgs/ny-lille-klub_about.webp" alt="">
@@ -14,9 +19,9 @@ import PageHeader from "../components/PageHeader.astro";
     
 <div  class="col-span-2">
 <PageHeader pageHeader="About"/>
-<h2 class="text-lg ">Welcome to Ny Lille Klub – where warmth, trust, and curiosity come together in a vibrant community! We're all about social activities, where everyone is welcome. Join us in fostering connections, embracing diversity, and creating cherished moments. Ny Lille Klub is your welcoming space, whether you're a seasoned member or a newcomer. Come, be a part of our dynamic community where every person and every moment is valued.</h2>
+<h2 class="text-lg ">Welcome to Ny Lille Klub - where warmth, trust, and curiosity come together in a vibrant community! We're all about social activities, where everyone is welcome. Join us in fostering connections, embracing diversity, and creating cherished moments. Ny Lille Klub is your welcoming space, whether you're a seasoned member or a newcomer. Come, be a part of our dynamic community where every person and every moment is valued.</h2>
 </div>
 
-</section>
+</section> -->
 
 </MainLayout>

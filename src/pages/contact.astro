@@ -1,23 +1,28 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import PageHeader from "../components/PageHeader.astro";
+// import PageHeader from "../components/PageHeader.astro";
+import PageIntro from "../components/PageIntro.astro";
 
 ---
 
 <MainLayout title="Contact" description="Ny Lille Klub's 'contact' page" keywords="Ny Lille Klub, volunteer coomunity, night club, kulturhus, laplandsgade, lappen">
 
-<section  class="grid sm:grid-cols-2 lg:grid-cols-3 gap-16">
+  <PageIntro  pageHeader="Contact" imageSource="/imgs/ny-lille-klub_contact.webp" imageAltText="Photo displays an empty table where you could image someone would sit whilst reply to your e-mail or other contact form-." pageDescription="Ny Lille Klub is just a message away! Got something on your mind? Don't hesitate to reach out. We're here to hear you, whatever it may be. Your thoughts matter to us, so go ahead and drop us a line. Let's keep the conversation going!">
 
-<div class="col-span-1">
+</PageIntro>  
+
+<!-- <section  class="grid sm:grid-cols-2 lg:grid-cols-3 gap-16">
+
+<div class="col-span-1 order-last lg:order-first">
 <img src="/imgs/ny-lille-klub_contact.webp" alt="">
 </div>
     
-<div  class="col-span-2">
+<div  class="col-span-2 p-4 lg:p-0">
 <PageHeader pageHeader="Contact"/>
 <h2 class="text-lg">
 Ny Lille Klub is just a message away! Got something on your mind? Don't hesitate to reach out. We're here to hear you, whatever it may be. Your thoughts matter to us, so go ahead and drop us a line. Let's keep the conversation going!</h2>
 </div>
 
-</section>
+</section> -->
 
 </MainLayout>
