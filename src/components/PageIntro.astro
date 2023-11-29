@@ -4,13 +4,13 @@ const { pageHeader, pageDescription, imageSource, imageAltText } = Astro.props;
 
 <section  class="grid lg:grid-cols-3 gap-16 min-h-screen py-20">
 
-<div class="order-last lg:order-first mx-auto slidecontainer opacity-0">
+<div class="order-last lg:order-first mx-auto yslidecontainer opacity-0">
 <img src={imageSource} alt={imageAltText}></div>
 
 <article class="lg:col-span-2 p-4 lg:p-0">
-<h1 class="text-7xl md:text-8xl font-extrabold pb-2 text-[#eb440f] slidecontainer opacity-0">{pageHeader}</h1>
-<h2 class="text-lg slidecontainer opacity-0">{pageDescription}</h2>
-<div class="slidecontainer opacity-0 ">
+<h1 class="text-7xl md:text-8xl font-extrabold pb-2 text-[#eb440f] yslidecontainer opacity-0">{pageHeader}</h1>
+<h2 class="text-lg yslidecontainer opacity-0">{pageDescription}</h2>
+<div class="yslidecontainer opacity-0 ">
    <slot />
 
 </div>
@@ -22,9 +22,9 @@ const { pageHeader, pageDescription, imageSource, imageAltText } = Astro.props;
 
 <script>
 import { animate, stagger } from "motion"
-const slidecontainers = document.querySelectorAll(".slidecontainer")
+const yslidecontainers = document.querySelectorAll(".yslidecontainer")
 
-animate(slidecontainers,
+animate(yslidecontainers,
 { opacity: 100, y: [-80]},
 {duration: 0.4,
       delay: stagger(0.08),
