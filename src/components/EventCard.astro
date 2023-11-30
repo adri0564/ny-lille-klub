@@ -4,21 +4,21 @@ const { title, time, date, price, description, source } = Astro.props;
 ---
 
 <!-- EVENT CARD -->
-<article class="text-black">
+<article itemscope itemtype="https://schema.org/SocialEvent" class="text-black">
     <!-- IMG -->
-    <div class="w-full"><img class="w-full" src={source}/></div>
+    <div class="w-full"><img itemprop="image" class="w-full" src={source}/></div>
     <!-- TITLE -->
     <div class="px-4 sm:px-0">
-<h2 class="font-bold text-3xl sm:text-2xl py-2">{title}</h2>
+<h2 itemprop="name" class="font-bold text-3xl sm:text-2xl py-2">{title}</h2>
 
 <section class="grid grid-cols-4">
 
         <!-- LEFT COLUMN (span 1) -->
 <div class="col-span-1 font-extralight text-sm">
                 <!-- DATE -->
-<p>{date}</p>
+<p itemprop="startDate">{date}</p>
         <!-- TIME -->
-<p>{time}</p>
+<p itemprop="doorTime">{time}</p>
 
         <!-- PRICE -->
 <p>{price}</p>
@@ -27,7 +27,7 @@ const { title, time, date, price, description, source } = Astro.props;
             <!-- RIGHT COLUMN (span 3) -->
     <div class="col-span-3 text-lg">
         <!-- DESCRIPTION -->
-<p>{description}</p>
+<p itemprop="about" >{description}</p>
 <button class="font font-semibold">View more</button>
     </div>
     </section>
