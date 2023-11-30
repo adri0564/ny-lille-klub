@@ -9,4 +9,46 @@ import PageIntro from "../components/PageIntro.astro";
 
 </PageIntro> 
 
+<!-- MEMBERSHIP SIGN UP SECTION -->
+<section class="p-4 lg:p-0" id="sign-up-section">
+  <div class="pb-20">
+      <h3 class="mb-4 text-5xl font-extrabold">Become a Member</h2>
+      <p class="mb-8 lg:mb-16 text-lg">Want to be a part of Ny Lille Klub? <br>As a member you'll be first one to know of our events. <br> Fill out the form below to join our community. </p>
+      <form action="#" class="space-y-8">
+
+<div>
+              <label for="fname" class="block mb-2 font-semibold text-xl">Your first name:</label>
+              <input type="text" id="fname" class="border-4 border-orange-100 px-4 py-2 rounded-lg w-full" placeholder="Example" required>
+          </div>
+
+          <div>
+              <label for="lname" class="block mb-2 font-semibold text-xl">Your last name:</label>
+              <input type="text" id="lname" class="border-4 border-orange-100 px-4 py-2 rounded-lg w-full" placeholder="Example" required>
+          </div>
+
+          <div>
+              <label for="email" class="block mb-2 font-semibold text-xl">Your e-mail:</label>
+              <input type="email" id="email" class="border-4 border-orange-100 px-4 py-2 rounded-lg w-full" placeholder="name@example.com" required>
+          </div>
+
+            <div>
+              <label for="tel" class="block mb-2 font-semibold text-xl">Your phone no.:</label>
+              <input type="tel" id="tel" class="border-4 border-orange-100 px-4 py-2 rounded-lg w-full" placeholder="12 34 56 78" required>
+          </div>
+
+          <button type="submit" class="w-full sm:w-1/2  lg:w-1/4 border-4 border-orange-100 px-4 py-2 rounded-lg hover:bg-orange-300 hover:border-orange-300 duration-[400ms] ease-in-out group"><div class="flex gap-4 items-center"><img class="group-hover:scale-125 duration-[400ms] delay-50" width="48" height="48" src="/imgs/ny-lille-klub_sign-up-icon.svg" alt="House - a symbol for home"><span class="group-hover:translate-x-4 duration-[400ms] delay-50 font-semibold text-xl">Sign me up</div></button>
+      </form>
+  </div>
+</section>
+
+
+
 </MainLayout>
+
+
+<style>
+	sign-up-section {
+		  max-width: 40ch;
+
+	}
+</style>
