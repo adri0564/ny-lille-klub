@@ -13,34 +13,35 @@
 <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 		<title>Astro</title>
 	</head>
-	<body class="  mx-auto font-raleway grid justify-center">
-		    <div class="w-auto pt-8 px-8"><img src="/imgs/ny-lille-klub_logo3_white.svg" alt="Ny Lille Klub logo"></div>
+	<body class="mx-auto font-raleway grid justify-center opacity-0">
+		    <div class="w-full pt-8 px-8"><img src="/imgs/ny-lille-klub_logo3_white.svg" alt="Ny Lille Klub logo"></div>
 <!-- MOBILE NAVIGATION -->
-<nav class="text-3xl font-extrabold text-white max-w-screen-lg sm:hidden">
+<nav class="text-3xl font-bold text-white max-w-screen-lg sm:hidden">
         <ul class=" text-center gap-8 grid">
-            <a class="mr-20" href="/events"><li>Events</li></a>
-            <a class="ml-48" href="/join-us"><li>Join us</li></a>
-            <a class="mr-48" href="/gallery"><li>Gallery</li></a>
-            <a class="ml-40" class="" href="/about"><li>About</li></a>
-            <a class="mr-20" href="/contact"><li>Contact</li></a>
+            <a class="mr-20 yslidecontainer  opacity-0" href="/events"><li>Events</li></a>
+            <a class="ml-48 yslidecontainer  opacity-0" href="/join-us"><li>Join us</li></a>
+            <a class="mr-48 yslidecontainer  opacity-0" href="/gallery"><li>Gallery</li></a>
+            <a class="ml-40 yslidecontainer  opacity-0" class="" href="/about"><li>About</li></a>
+            <a class="mr-20 yslidecontainer  opacity-0" href="/contact"><li>Contact</li></a>
         </ul>
     </nav>
 
 			<!-- DESKTOP NAVIGATION -->
-<nav class="sm:text-4xl md:text-5xl font-extrabold italic text-white max-w-screen-lg hidden sm:grid md:ml-8">
+<nav class="sm:text-3xl md:text-4xl font-bold text-white max-w-screen-lg hidden sm:grid md:ml-8">
         <ul class="grid grid-cols-3">
-            <a class="row-start-2 col-start-2 ml-10 pt-4 sm:hover:scale-[2] duration-200" href="/events"><li >Events</li></a>
-            <a class="row-start-3 col-start-3 ml-8 pt-12  sm:hover:scale-[2]  duration-200 origin-bottom-left" href="/join-us"><li>Join us</li></a>
-            <a class="row-start-1 col-start-1 ml-4 pt-4  sm:hover:scale-[2]  duration-200 origin-top" href="/gallery"><li>Gallery</li></a>
-            <a class="row-start-3 col-start-1 ml-20 pt-6  sm:hover:scale-[2]  duration-200 origin-bottom-right" href="/about"><li>About</li></a>
-            <a class="row-start-1 col-start-3 -ml-8  sm:hover:scale-[2]  duration-200 origin-top-left" href="/contact"><li>Contact</li></a>
+            <a class="yslidecontainer opacity-0 row-start-2 col-start-2 ml-10" href="/events"><li class="sm:hover:scale-150 duration-200">Events</li></a>
+            <a class="yslidecontainer opacity-0 row-start-3 col-start-3 ml-8 pt-8" href="/join-us"><li class="sm:hover:scale-150 duration-200">Join us</li></a>
+            <a class="yslidecontainer opacity-0 row-start-1 col-start-1 ml-4 " href="/gallery"><li class="sm:hover:scale-150 duration-200">Gallery</li></a>
+            <a class="yslidecontainer opacity-0 row-start-3 col-start-1 ml-20 pt-2" href="/about"><li class="sm:hover:scale-150 duration-200">About</li></a>
+            <a class="yslidecontainer opacity-0 row-start-1 col-start-3 -ml-8" href="/contact"><li class="sm:hover:scale-150 duration-200">Contact</li></a>
         </ul>
-    </nav>	</body>
+    </nav>	
+</body>
 </html>
 
 <style>
     body {
-	background: linear-gradient(-45deg, #eb440f, #741438, #d52323, #950792);
+	background: linear-gradient(-45deg, #d73a09, #911744, #c41919, #a60ba4);
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
 	height: 100vh;
@@ -59,3 +60,27 @@
 }
 
 </style>
+
+
+<script>
+import { animate, stagger } from "motion"
+
+// FADE IN "BODY" v LOAD
+animate("body", { opacity: [0, 1] }, { duration: 0.8 });
+
+// Y-AKSE SLIDE NAVIGATIONS PUNKTER
+
+const yslidecontainers = document.querySelectorAll(".yslidecontainer")
+
+animate(yslidecontainers,
+{ opacity: 100, y: [-80]},
+{duration: 0.4,
+      delay: stagger(0.08),
+ easing: "ease-in-out",
+}
+
+)
+
+
+
+</script> 
