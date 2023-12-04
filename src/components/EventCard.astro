@@ -4,6 +4,8 @@ const { title, time, date, price, description, source } = Astro.props;
 ---
 
 <!-- EVENT CARD -->
+<a href="https://www.ticketmaster.dk/" 
+target=”_blank”>
 <article itemscope itemtype="https://schema.org/SocialEvent" class="text-black">
     <!-- IMG -->
     <div class="w-full"><img itemprop="image" class="w-full" src={source}/></div>
@@ -34,4 +36,4 @@ const { title, time, date, price, description, source } = Astro.props;
     </div>
 
 </article>
-
+</a>
