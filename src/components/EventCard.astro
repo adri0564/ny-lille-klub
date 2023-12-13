@@ -4,9 +4,11 @@ const { title, time, date, price, description, source } = Astro.props;
 ---
 
 <!-- EVENT CARD -->
-<a href="https://www.ticketmaster.dk/" 
-target=”_blank”>
-<article itemscope itemtype="https://schema.org/SocialEvent" class="text-black">
+
+
+
+
+<article itemscope itemtype="https://schema.org/SocialEvent" class="event text-black">
     <!-- IMG -->
     <div class="w-full"><img itemprop="image" class="w-full" src={source}/></div>
     <!-- TITLE -->
@@ -30,10 +32,82 @@ target=”_blank”>
     <div class="col-span-3 text-lg">
         <!-- DESCRIPTION -->
 <p itemprop="about" >{description}</p>
-<button class="font font-semibold">View more</button>
+<button class=" font font-semibold">View more</button>
     </div>
     </section>
     </div>
 
+
 </article>
-</a>
+
+<dialog class="p-4">
+        <h3>{title}</h3>
+
+        <!-- DATE TIME PRICE -->
+<section class="items-center flex w-full justify-between font-semibold text-xl">
+      <div class="flex items-center gap-4">
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 16 16"><g fill="currentColor"><path d="M4.684 11.523v-2.3h2.261v-.61H4.684V6.801h2.464v-.61H4v5.332zm3.296 0h.676V8.98c0-.554.227-1.007.953-1.007c.125 0 .258.004.329.015v-.613a1.806 1.806 0 0 0-.254-.02c-.582 0-.891.32-1.012.567h-.02v-.504H7.98zm2.805-5.093c0 .238.192.425.43.425a.428.428 0 1 0 0-.855a.426.426 0 0 0-.43.43m.094 5.093h.672V7.418h-.672z"/><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/></g></svg>  <p>{date}</p>
+  </div>
+
+      <div class="flex items-center gap-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 16 16"><g fill="currentColor"><path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/></g></svg>
+  <p>{time}</p>
+  </div>
+
+      <div class="flex items-center gap-4">
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 16 16"><path fill="currentColor" d="M0 5a5.002 5.002 0 0 0 4.027 4.905a6.46 6.46 0 0 1 .544-2.073C3.695 7.536 3.132 6.864 3 5.91h-.5v-.426h.466V5.05c0-.046 0-.093.004-.135H2.5v-.427h.511C3.236 3.24 4.213 2.5 5.681 2.5c.316 0 .59.031.819.085v.733a3.46 3.46 0 0 0-.815-.082c-.919 0-1.538.466-1.734 1.252h1.917v.427h-1.98c-.003.046-.003.097-.003.147v.422h1.983v.427H3.93c.118.602.468 1.03 1.005 1.229a6.5 6.5 0 0 1 4.97-3.113A5.002 5.002 0 0 0 0 5m16 5.5a5.5 5.5 0 1 1-11 0a5.5 5.5 0 0 1 11 0m-7.75 1.322c.069.835.746 1.485 1.964 1.562V14h.54v-.62c1.259-.086 1.996-.74 1.996-1.69c0-.865-.563-1.31-1.57-1.54l-.426-.1V8.374c.54.06.884.347.966.745h.948c-.07-.804-.779-1.433-1.914-1.502V7h-.54v.629c-1.076.103-1.808.732-1.808 1.622c0 .787.544 1.288 1.45 1.493l.358.085v1.78c-.554-.08-.92-.376-1.003-.787zm1.96-1.895c-.532-.12-.82-.364-.82-.732c0-.41.311-.719.824-.809v1.54h-.005zm.622 1.044c.645.145.943.38.943.796c0 .474-.37.8-1.02.86v-1.674z"/></svg>  <p>{price}</p>
+  </div>
+
+</section>
+
+
+
+        <button class="close text-white bg-black font-semibold text-xl border-4 hover:text-black border-black hover:bg-[#fefdf4] rounded-lg px-4 py-2 duration-[400ms] ease-in-out">Close</button>
+<a target="_blank" href="https://www.ticketmaster.dk">
+         <button class="font-semibold text-xl flex gap-4 items-center justify-start w-full  border-4 bg-orange-100  border-orange-300 px-4 py-2 rounded-lg hover:bg-orange-300 hover:border-orange-300 duration-[400ms] ease-in-out group">
+        <span class="group-hover:scale-125 duration-[400ms] delay-50">Buy now</span>
+            <img class="group-hover:translate-x-4 duration-[400ms] delay-50 "  width="40" height="40" src="/imgs/ny-lille-klub_right-icon.svg" alt="House - a symbol for home">
+          </button> 
+      </a>
+</dialog>
+
+
+<script>
+        const events = document.querySelectorAll(".event")
+        const dialogs = document.querySelectorAll("dialog")
+        const closeButtons = document.querySelectorAll(".close")
+
+
+        dialogs.forEach((dialog, index) =>{
+                dialog.classList.add(`dialog${index}`)
+        })
+
+        events.forEach((item, index) =>{
+                item.addEventListener("click", ()=>{
+                        document.querySelector(`.dialog${index}`).showModal()
+                })
+        })
+
+        closeButtons.forEach((button, index) =>{
+                button.addEventListener("click", ()=>{
+                        document.querySelector(`.dialog${index}`).close()
+                })
+        })
+
+        
+        // document.querySelector(".open").addEventListener("click", ()=>{
+        //         document.querySelector("dialog").showModal()
+        //         console.log("open dialog")
+        // });
+
+</script>
+
+<style>
+
+        
+        dialog{
+                position: fixed;
+                width: 50%;
+                height: 50%;
+        }
+</style>
